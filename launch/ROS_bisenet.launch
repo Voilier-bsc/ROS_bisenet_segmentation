@@ -1,0 +1,19 @@
+<launch>
+    <node pkg = "ROS_bisenet_segmentation" type = "ROS_bisenet_inference.py" name="bisenet_inference"/>
+    <node name="image_view1" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <param name="autosize" value="true" />
+    <remap from="image" to="bisenet_inference_img" />
+    </node>
+    <node name="image_view2" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="bisenet_inference_img_dynamic" />
+    <param name="autosize" value="true" />
+    </node>
+    <node name="image_view3" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="bisenet_inference_img_fr1" />
+    <param name="autosize" value="true" />
+    </node>
+    <node name="image_view4" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="bisenet_inference_img_fr2" />
+    <param name="autosize" value="true" />
+    </node>
+</launch>
