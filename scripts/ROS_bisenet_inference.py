@@ -16,11 +16,13 @@ from cv_bridge.boost.cv_bridge_boost import getCvType
 import torch
 import torch.nn as nn
 
+sys.path.insert(0, '/home/cordin/catkin_ws/src/ROS_bisenet_segmentation')
+
 import lib.transform_cv2 as T
 from lib.models import model_factory
 from configs import set_cfg_from_file
 
-sys.path.insert(0, '/home/cordin/catkin_ws/src/ROS_bisenet_segmentation')
+
 torch.set_grad_enabled(False)
 np.random.seed(123)
 
